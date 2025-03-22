@@ -49,6 +49,7 @@ riscv_srcs = \
 	isa_parser.cc \
 	processor.cc \
 	execute.cc \
+	difftest.cc \
 	dts.cc \
 	sim.cc \
 	interactive.cc \

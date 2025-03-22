@@ -14,6 +14,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <string_view>
 #include <memory>
 #include <sys/types.h>
 
@@ -60,11 +61,11 @@ public:
   // Callback for processors to let the simulation know they were reset.
   virtual void proc_reset(unsigned id) override;
 
-  void diff_init(int port);
+  void diff_init();
+  void diff_mem_init(std::string_view img, std::uint64_t img_size);
   void diff_step(uint64_t n);
   void diff_get_regs(void* diff_context);
   void diff_set_regs(void* diff_context);
-  void diff_memcpy(reg_t dest, void* src, size_t n);
 
 private:
   isa_parser_t isa;
